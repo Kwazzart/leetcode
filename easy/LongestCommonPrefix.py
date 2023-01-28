@@ -2,8 +2,11 @@ from typing import List
 
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        base_string = strs[0]
-        prefix = ""
-        for i
-
-        
+        triplets = list(zip(*strs))
+        sub_str = ""
+        for triplet in triplets:
+            if len(set(triplet)) == 1:
+                sub_str += triplet[0]
+                continue
+            break
+        return sub_str
